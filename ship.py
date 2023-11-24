@@ -2,7 +2,6 @@ import pygame
 
 class Ship():
     def __init__(self, ai_settings, screen):
-        """Initialize the ship and set its starting position."""
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -22,7 +21,6 @@ class Ship():
         self.moving_left = False
 
     def update(self):
-        """Update the ship's position based on the movement flag."""
         if self.moving_right and self.rect.right <= self.screen_rect.right:
             self.center += self.ai_settings.ship_speed_factor
 
@@ -32,5 +30,4 @@ class Ship():
         self.rect.centerx = int(self.center)
 
     def blitme(self):
-        """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
